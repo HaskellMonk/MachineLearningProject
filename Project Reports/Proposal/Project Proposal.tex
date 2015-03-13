@@ -1,0 +1,31 @@
+\documentclass[]{article}
+\usepackage{bibentry}
+%opening
+\title{Machine Learning Project Proposal}
+\author{Praful Agrawal, Michael Matheny}
+
+\begin{document}
+	\maketitle
+	
+	%Certain classifiers have been designed to be invariant to various transforms on the feature vectors. Some traditional examples of invariant classifiers might be a facial recognition program that needs to work correctly no matter the position or orientation of a face in an image or a voice recognition program that needs to be invariant to the length or content of what is said. 
+	
+	A basic assumption in most machine learning is that the order of features in a feature vector is preserved in training as well as in the test instances. This is essential for obvious reasons of correspondence. However, it may happen that the feature values get permuted, a simple example of this scenario could be say if we have a feature vector $v = \left \lbrack a_1, a_2, a_3, a_4 \right\rbrack$, but through some incident it has been reordered to be $v^{'} = \left \lbrack a_4, a_1, a_2, a_3 \right\rbrack$. Classifiers that are invariant to feature vector permutation could have critical medical applications such as epilepsy detection using EEG signals.  In the standard procedure, electrical activity across the skull is recorded through many small metal disks. The resulting signals are processed using signal processing and then machine learning techniques are used to estimate the presence or impact of epilepsy. In different hospital settings (commonly observed in developing nations), if the disk numbers are not in correspondence with the desired input stream of a machine learning algorithm, the recommendations of such a system would be irrelevant. In such a critical scenario, recapture of data is also impractical, therefore, it would be helpful if machine learning algorithms become invariant to such permutations. 
+	
+	Developing a classifier that is invariant to all permutation will significantly increase the complexity of the classifier as well as the classification error. In this project, we aim to look at this problem of permuted feature vectors. It is a challenging problem for machine learning algorithms as it is a violation of very basic assumptions. The problem has not been addressed in the machine learning literature with much emphasis. One of the possible and interesting directions is proposed in \cite{CGRS10} where the idea is to update the classifier mapping to handle such permuted cases. Another direction could be to check if the given feature vector is in a valid order. This approach could also be helpful in analysis of outlier cases and assist the classifiers to operate on such cases with better performance.
+	
+	\bibliographystyle{alpha}
+	\bibliography{Proposal.bib}
+	
+	%We would like to examine a particular instance of this problem in which a feature vector $v$ is permuted such that $\pi(v) \rightarrow v^{'}$.  How do 
+	%we based on only the values $a_1, a_2, \cdots$ find the original $v$ so that we can apply a classifier to it?
+	
+	
+	%One relevant example of this problem occurs when doing an electroencephalograhm. An electroencephalograhm 
+	%is a test that measures electrical activity across the skull through many small metal disks. The electrical
+	%activity can be used to detect the regions of the brain that cause seizures or to see if you are sleeping. If the electrodes are placed incorrectly then feeding the signal into a classifier could give the wrong diagnosis. An algorithm that could detect if electrodes have been placed incorrectly or even reorder the 
+	%electrodes would be very useful.  We specifically mention this issue as it relates to the research that Praful Agrawal is doing currently under Dr. Ross Whitaker.
+	
+\end{document}
+
+
+
