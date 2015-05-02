@@ -8,6 +8,9 @@ def l0(perm):
 
 
 def kendal_tau(perm):
+    """
+    Computes the Kendal Tau distance
+    """
     count = 0
     for (i, j) in combinations(range(len(perm)), 2):
         if perm[i] > perm[j]:
@@ -16,6 +19,11 @@ def kendal_tau(perm):
 
 
 def min_swap(perm):
+    """
+    Calculates the number of arbitrary swaps needed to 
+    put array perm into an ordered arangement. 
+    only works if elements are [0, 1, 2,...,n - 1]
+    """
     seen_set = set()
     sub_graph_count = 0
     element_count = 0
