@@ -43,3 +43,10 @@ def min_swap(perm):
             element_count += len(curr_sub_graph)
         seen_set |= curr_sub_graph
     return element_count - sub_graph_count
+
+
+def inverse(perm):
+    # Need to double check that this works
+    invp = np.zeros(len(perm))
+    invp[perm] = np.arrange(len(perm))
+    return invp
